@@ -6,6 +6,8 @@
 
 **EMAIL：dabing1022@gmail.com**
 
+**[GITHUB ARCHIVE](https://github.com/dabing1022/Blog/blob/master/%E8%AF%A6%E8%A7%A3quick-cocos2dx%E7%BB%A7%E6%89%BF%E6%9C%BA%E5%88%B6.md)**
+
 ------------------------------------------------------------------
 
 这篇文章让我们来理解下QuickCocos2dx的继承机制，关于继承这个概念，是OO思想里提出来的。在C++中，我们就不说了; 在lua中，是用table配合元表metatable来实现面向对象的。下面分两部分来理解Quick中的继承机制。
