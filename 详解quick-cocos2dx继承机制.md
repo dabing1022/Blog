@@ -63,7 +63,7 @@ Hero.skill = ""
 
 
 --====================hero1,hero2======================
-local hero1 = Hero:new({name = "金刚狼"})
+local hero1 = Hero:new()
 hero1.name = "金刚狼"
 hero1.skill = "甩开爪子切牛排"
 
