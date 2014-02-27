@@ -75,3 +75,13 @@ void CCDrawNode::drawPolygon(CCPointArray *verts, const ccColor4F &fillColor, fl
 通过CCPointArray的fetchPoints得到c风格CCPoint数组，顶点个数为4
 
 截图和上面一样
+
+##3. 使用display.newPolygon
+
+示意：
+
+```
+local points = { {x1, y1} , {x2, y2}, ....}
+local polygon = display.newPolygon(points)
+scene:addChild(polygon)
+```
