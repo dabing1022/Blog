@@ -3,7 +3,7 @@
 
 ## 多重继承例子
 
-```lua 多重继承例子
+```
 local function search(k, tables)
 	for i, v in ipairs(tables) do
 		if v[k] then
@@ -54,7 +54,7 @@ femaleCoder:doProgramming() -- do coding
 
 ## 1. __index是个表的情况
 
-```lua __index是个表的情况
+```
 local Test = { group = "quick" }
 function Test:new(o)
 	o = o or {}
@@ -78,7 +78,7 @@ print(a.group) -- quick
 
 ## 2. __index 是函数的情况
 
-```lua __index 是函数的情况
+```
 local Test = { }
 Test.prototype = { group = "quick", 
 				   qq = "284148017", 
