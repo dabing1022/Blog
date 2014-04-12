@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 
-//extern int exterParam;
+extern int exterParam;
 int main()
 {
 	printf("hello world. My name is ChildhoodAndy!!");
@@ -10,6 +10,6 @@ int main()
 	printf("\n");
 	printf("im is %d", im);
 	printf("\n");
-    //printf("exter param is %d", exterParam);
+    printf("exter param is %d\n", exterParam);
 	return 0;
 }
