@@ -22,3 +22,17 @@ then
 else
     echo "Sorry:("
 fi
+
+raining=1
+while [ "$raining" -eq "2" ] 
+# while [ "$raining" -eq "1" ] 
+do
+    echo "still raining"
+done
+
+counter=0
+while [ $counter -lt 10 ]
+do
+    let counter=" $counter + 1 "
+    echo $counter
+done
