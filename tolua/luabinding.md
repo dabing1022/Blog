@@ -93,4 +93,4 @@ bool CCLuaStack::init(void)
 
 按照自留地那种追加的方式，因为自定义类的绑定代码被追加到了`cocos2dx_extra_luabinding.cpp`中，而`luaopen_cocos2dx_extra_luabinding(m_state);`在`init`函数里面已经实现了接口暴露，所以不需要做其余的工作了。但这种方式别忘记在`cocos2dx_extra_luabinding.cpp` include进自定义类的头文件。
 
-按照廖大的方式，我们可以在`AppDelegate.cpp`中将自定义类的luabinding接口暴露出来给lua，详细阅读廖大的那篇介绍[载入 luabinding 接口文件](http://cn.quick-x.com/?p=235)
+按照廖大的方式，我们可以在`AppDelegate.cpp`中将自定义类的luabinding接口暴露出来给lua，详细阅读廖大的那篇介绍[载入 luabinding 接口文件](http://quick.cocoachina.com/?p=235)
