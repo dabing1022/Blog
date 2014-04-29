@@ -1,6 +1,6 @@
 ###[来源](https://groups.google.com/forum/#!topic/quick-x/kVDKbcMt2Ro)
 
-我说下我的绑定做法，和[廖大的做法](http://cn.quick-x.com/?p=235)和[自留地的做法](http://www.codeo4.cn/archives/746)稍微有些不同。我尽可能描述清楚下。
+我说下我的绑定做法，和[廖大的做法](http://quick.cocoachina.com/?p=235)和[自留地的做法](http://www.codeo4.cn/archives/746)稍微有些不同。我尽可能描述清楚下。
 
 拿个测试项目做个举例
 
