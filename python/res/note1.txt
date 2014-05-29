@@ -1,0 +1,9 @@
+a = 1
+b = 2
+c = 4
+d = 100
+e = 10000
+f = 200
+
+g = "100"
+name = 'ChildhoodAndy'
