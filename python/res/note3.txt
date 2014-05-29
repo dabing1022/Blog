@@ -1,0 +1,9 @@
+(lp0
+S'China'
+p1
+aI2
+aS'Hi'
+p2
+aF200.0
+aF1e-12
+a.
