@@ -5,7 +5,7 @@ print "Hello world!"
 i = 5
 print i
 i = i + 1
-print i 
+print i
 s = '''This is a multi-line string
                 This is the second line'''
 print s
@@ -20,3 +20,7 @@ width = 5
 height = 2
 area = width * height
 print 'area is', area
+
+print '------------------str--------------------'
+print 'age ' + str(5)
+print 'age', 6
