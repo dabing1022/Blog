@@ -24,3 +24,14 @@ print re.match(s, testStr2).group()
 s = r'^<(\w)+(\s)*(\w)+>'
 name = re.match(s, testStr3).group()
 print name[1:-1]
+
+print '--------------------------------------------------'
+pattern = 'this'
+text = 'Does this text match the pattern?'
+
+match = re.search(pattern, text)
+
+s = match.start()
+e = match.end()
+
+print 'Found "%s"\nin "%s" from %d to %d "%s"' % (match.re.pattern, match.string, s, e, text[s:e])
