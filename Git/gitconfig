@@ -18,3 +18,5 @@
     throwh = reset --hard HEAD^
     log1 = log --abbrev-commit --pretty=oneline
  	log2 = log --pretty=oneline
+ 	br = branch
+ 	ck = checkout
