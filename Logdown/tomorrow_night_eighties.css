@@ -1,3 +1,4 @@
+.highlight pre  { background: #2d2d2d; color: #cccccc !important; }
 .highlight pre .c { color: #999999 !important; } /* Comment */
 .highlight pre .err { color: #f2777a !important; } /* Error */
 .highlight pre .k { color: #cc99cc !important; } /* Keyword */
