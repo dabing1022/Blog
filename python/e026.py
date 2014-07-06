@@ -14,7 +14,7 @@ wordsSearchingList = ['love', 'like', 'hate']
 for item in wordsSearchingList:
 	keyWord = urllib.quote(item)
 
-	url = 'https://www.google.co.jp/complete/search?client=serp&hl=zh-CN&gs_rn=48&gs_ri=serp&tok=lwx3u9LNbTPjJBbBMlLYAw&pq=%s&cp=4&gs_id=8ea&q=%s&xhr=t' % (keyWord, keyWord)
+	url = 'https://www.google.co.jp/complete/search?client=hp&hl=zh-CN&gs_rn=48&gs_ri=hp&tok=9rRotU-cEDUkHKHgOoZAZw&cp=4&gs_id=je&q=%s&xhr=t' % (keyWord)
 	headers = {
 		"GET": url,
 		"Host": "www.google.co.jp",
