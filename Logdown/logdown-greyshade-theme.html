@@ -1,0 +1,341 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="http://cdn-theme.logdown.io/greyshade/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://cdn-theme.logdown.io/utils/stylesheets/default_code_highlight.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script> -->
+  <!--<script src="http://code.jquery.com/jquery-latest.js"></script> -->
+  <!--<link href='http://fonts.useso.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>-->
+  <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-col">
+      <div class="intrude-less">
+        <header id="header" class="inner"><div class="profilepic">
+
+          <img src='http://www.gravatar.com/avatar/{{blog.author_gravatar_hash}}?s=160' alt='Profile Picture' style='width: 160px;'/>
+
+        </div>
+          <h1><a href="{{blog.absolute_url}}"><font style="color:MediumSpringGreen ">{{blog.title}}</font></a></h1>
+        <p class="subtitle"></p>
+        <nav id="main-nav"><ul class="main">
+          <li>
+            <div>
+              <img src='http://childhoodgamedev.qiniudn.com/blog_1.png' style='width: 32px;height: 32px;vertical-align:middle'/>
+              <span><a href="{{blog.absolute_url}}"><font style="color:Gold">  博客主页</font></a></span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <img src='http://childhoodgamedev.qiniudn.com/blog_2.png' style='width: 32px;height: 32px;vertical-align:middle'/>
+              <a href="{{blog.archives_url}}"><font style="color:DarkTurquoise">  文档归类</font></a>
+            </div>
+          </li>
+          
+          {% block static_page_list %}
+            {% block static_pages %}
+              <li>
+                <div>
+                  <img src='http://childhoodgamedev.qiniudn.com/blog_3.png' style='width: 32px;height: 32px;vertical-align:middle'/>
+                  <a href="{{ static_page.absolute_url }}"><font style="color:DeepPink">  {{static_page.title}}</font></a>
+                </div>
+              </li>
+            {% endblock %}
+          {% endblock %}
+
+        </ul>
+          
+        <p class="profile" style="color:AntiqueWhite">爱编程，爱晚起，偶尔也忙到深夜<br>
+        喜欢学习，努力工作，也享受生活<br>
+        我酷爱技术，崇尚简单的快乐和幸福<br>
+        我不是码农，我是程序员<br>
+        我和你一样，为理想而奋斗
+        </p>
+        
+        <section class="aboutme">
+          {{blog.author_about_me}}
+        </section>
+      </nav>
+
+      <nav id="sub-nav">
+        <div class="social">
+          <a class="google" href="{{blog.author_google_plus_link}}" title="Google+">Google+</a>
+          <a class="twitter" href="{{blog.author_twitter_link}}" title="Twitter">Twitter</a>
+          <a class="github" href="{{blog.author_github_profile_link}}" title="GitHub">GitHub</a>
+          <a class="rss" href="{{ blog.rss_url }}" title="RSS">RSS</a>
+        </div>
+      </nav>
+     </header>
+    </div>
+  </div>
+  <div class="mid-col">
+
+      <div itemscope="" itemtype="http://schema.org/Blog">
+
+    <div class="mid-col-container">
+      <div id="content" class="inner">
+
+
+      {% block search_page %}
+          <br>
+          <p class="search-result-meta">
+            Your search for <strong>“ {{ query_string }} ”</strong> matches <strong> {{ results_count }} </strong> results:
+          </p>
+      {% endblock %}
+
+      {% block tags_page %}
+          <br>
+          <p class="search-result-meta">
+            Posts match <strong>“ {{ tag_name }} ”</strong> tag:
+          </p>
+      {% endblock %}
+
+
+      {% block archives_page|category_page %}
+
+      <div itemscope="" itemtype="http://schema.org/Blog">
+        {% block category_list %}
+          <div class="category-selector">
+          <div class="category-dropdown">
+            <div class="dropdown-toggle" role="button">
+              {% block archives_page %} 所有分类 {% endblock %}
+              {% block category_page %} 分类: {{category.name}} {% endblock %}
+              <i class="icon-caret-down">
+            </div>
+
+            <div class="dropdown-menu category-list" role="menu">
+              <ul role="list">
+                {% block categories %}
+                  <li class="category">
+                    <a href="{{ category.url }}">{{category.name}}  ({{category.count}})</a>
+                  </li>
+                {% endblock %}
+                <li class="category">
+                  <a href="{{ blog.archives_url }}">所有分类</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          </div>
+        {% endblock %}
+
+        {% block archives %}
+        <section class="archives"><h2 class="year">{{archive.year}}</h2>
+
+          {% block posts %}
+          <article itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <div class="meta">
+              <span class="date"><time datetime="{{post.published_at.utc}}" itemprop="datePublished">{{post.published_at.date}}</time></span>
+              <br>
+              {% block tag_list %}
+              <span class="tags">
+               {% block tags %}
+               <a lass="category" href="{{tag.url}}">{{tag.name}}</a>
+               {% endblock %}
+             </span>
+             {% endblock %}
+           </div>
+           <h2 class="title" itemprop="name"><a href="{{post.absolute_url}}">{{post.title}}</a></h2>
+        </article>
+        {% endblock %}
+      </section>
+      {% endblock %}
+
+    </div>
+    {% endblock %}
+
+    {% block static_page %}
+      <article class="post" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <h2 class="title" itemprop="name"><a href="{{static_page.absolute_url}}" itemprop="url">  {{static_page.title}}</a></h2>
+
+        <div class="entry-content" itemprop="articleBody">
+          {{static_page.content}}
+        </div>
+      </article>
+    {% endblock %}
+
+
+
+     {% block posts %}
+
+
+     <article class="post" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+      <div class="meta">
+        <div class="date">
+          <time datetime="{{post.published_at.utc}}" data-updated="true" itemprop="datePublished">{{post.published_at.date}}</time></div>
+          {% block tag_list %}
+          <div class="tags">
+            {% block tags %}
+            <a lass="category" href="{{tag.url}}">{{tag.name}}</a>
+            {% endblock %}
+          </div>
+          {% endblock %}
+        </div>
+
+        <h2 class="title" itemprop="name"><a href="{{post.absolute_url}}" itemprop="url">  {{post.title}}</a></h2>
+
+        {% block index_page|tags_page %}
+        <div class="entry-content" itemprop="articleBody">
+          {{ post.excerpt_content }}
+
+          {% block readmore %}
+          <a href="{{post.absolute_url}}" class="more-link">Continue Reading →</a>
+          {% endblock %}
+        </div>
+        {% endblock %}
+
+
+        {% block show_page %}
+        <div class="entry-content" itemprop="articleBody">
+          {{ post.content }}
+        </div>
+        {% endblock %}
+
+        {% block search_page %}
+            {{ post.content | search_content: query_string }}
+        {% endblock %}
+
+      </article>
+
+
+      {% block show_page %}
+<!--            
+      <div class="share">
+        <div class="addthis_toolbox addthis_default_style ">
+          {% block twitter_sharing %}
+          <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+          {% endblock %}
+
+          {% block twitter_sharing %}
+          <a class="addthis_button_tweet"></a>
+          {% endblock %}
+
+          {% block google_plus_sharing %}
+          <a class="addthis_button_google_plusone" g:plusone:size="{{ site.google_plus_one_size }}"></a>
+          {% endblock %}
+          <a class="addthis_counter addthis_pill_style"></a>
+        </div>
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid={{ site.addthis_profile_id }}"></script>
+      </div>
+-->
+
+  <br><center><b>☯想说点啥吗？选择多说或者Disqus评论☯</b></center><br>
+  <br><center><b>多说评论</b></center><br>
+    
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key={{post.published_at.(timestamp)}} data-title="{{post.title}}" data-url="{{post.absolute_url}}"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"childhoodandy"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+    
+    <!-- 多说最新评论 start -->
+  <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+<!-- 多说最新评论 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"childhoodandy"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+    
+    <!-- 多说热评文章 start -->
+  <div class="ds-top-threads" data-range="daily" data-num-items="5"></div>
+<!-- 多说热评文章 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"childhoodandy"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+    
+  <br><center><b>Disqus评论</b></center><br>     
+      {% block disqus %}
+      <section id="comment">
+        <h1 class="title">Comments</h1>
+        {% disqus %}
+      </section>
+      {% endblock %}
+            
+
+
+      <nav id="pagenavi">
+        {% block previous_post %}
+          <a href="{{previous_post_url}}" class="prev"> {{previous_post_title}}</a>
+        {% endblock %}
+
+        {% block next_post %}
+          <a href="{{next_post_url}}" class="next"> {{next_post_title}}</a>
+        {% endblock %}
+      </nav>
+
+      {% endblock %}
+
+      {% endblock %}
+
+    </div>
+
+    {% block pagination %}
+    <nav id="pagenavi">
+      {% block next_page %}
+        <a href="{{next_page_url}}" class="next">下一页</a>
+      {% endblock %}
+      {% block previous_page %}
+        <a href="{{previous_page_url}}" class="prev">上一页</a>
+      {% endblock %}
+      <div class="center"><a href="{{blog.archives_url}}">文档归类</a></div>
+    </nav>
+    {% endblock %}
+
+  </div>
+</div>
+
+<footer id="footer" class="inner">Copyright &copy; 2013
+
+  {{blog.author_display_name}}
+
+  <br>
+  Powered by <a href="http://logdown.com">Logdown</a> and <a href="http://shashankmehta.in/archive/2012/greyshade.html">Greyshade</a> <br>
+  Favicon from <a href="http://thenounproject">The Noun Project</a>
+</footer>
+
+  <script src="http://cdn-theme.logdown.io/greyshade/javascripts/slash.js"></script>
+  <script src="http://cdn-theme.logdown.io/greyshade/javascripts/jquery.fancybox.pack.js"></script>
+  <script src="http://cdn-theme.logdown.io/utils/javascripts/logdown_blog.js"></script>
+    
+</div>
+</div>
+</body>
+</html>
