@@ -67,9 +67,7 @@ CoreData中的`NSManagedObjectModel 托管对象的数据模型（MOM）`，通�
 
 这里有一个简单的demo<i class="icon-github"/>[CoreDataDemo](https://github.com/dabing1022/CoreDataDemo)。
 
-```objective-c CoreDataDemoSnippet https://gist.github.com/dabing1022/0ce84c7d2882b487f10f  <i class="icon-github-alt"/>Gist地址
-#pragma mark - CoreDataAbout
- 
+```objective-c 
 - (void)saveContext
 {
     NSError* error = nil;
@@ -155,7 +153,7 @@ CoreData中的`NSManagedObjectModel 托管对象的数据模型（MOM）`，通�
 
 在我们的app delegate中，或者在`awakeFromNib`中都可以，我们可以使用下列的方法来设置CoreData堆栈。
 
-```objective-c setup系列方法
+```objective-c
 + (void) setupCoreDataStack;
 + (void) setupAutoMigratingCoreDataStack;
 + (void) setupCoreDataStackWithInMemoryStore;
@@ -168,7 +166,7 @@ CoreData中的`NSManagedObjectModel 托管对象的数据模型（MOM）`，通�
 
 在我们的app退出时，我们可以使用下面这个方法来做清理工作。
 
-```objective-c cleanUp
+```objective-c
 [MagicalRecord cleanUp];
 ```
 
