@@ -22,3 +22,5 @@
  	br = branch
  	ck = checkout
  	st = status
+[credential]
+    helper = store
