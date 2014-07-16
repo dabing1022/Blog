@@ -5,14 +5,10 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="http://childhoodgamedev.qiniudn.com/logdown_avatar-icon.ico"/>
+  <link rel="shortcut icon" href="http://childhoodgamedev.qiniudn.com/logdown_avatar-icon.ico" />
 
   <link href="http://cdn-theme.logdown.io/greyshade/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="http://cdn-theme.logdown.io/utils/stylesheets/default_code_highlight.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script> -->
-  <!--<script src="http://code.jquery.com/jquery-latest.js"></script> -->
-  <!--<link href='http://fonts.useso.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>-->
   <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
 </head>
 
@@ -21,7 +17,6 @@
     <div class="left-col">
       <div class="intrude-less">
         <header id="header" class="inner"><div class="profilepic">
-
           <img src='http://www.gravatar.com/avatar/{{blog.author_gravatar_hash}}?s=160' alt='Profile Picture' style='width: 160px;'/>
 
         </div>
@@ -29,6 +24,13 @@
         <p class="subtitle"></p>
         <nav id="main-nav"><ul class="main">
           <li>
+            <div class="search">
+               <form accept-charset="UTF-8" action="/posts/search" method="get">
+                 <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+                 <input class="search-box" type="text" name="q" results="0" value="" placeholder="  HappyCoding:)-搜索" style="width: 170px;height: 20px;border-radius: 20px;border: 0 none;padding: 2px 15px 2px 15px">
+               </form>
+             </div>
+
             <div>
               <img src='http://childhoodgamedev.qiniudn.com/blog_1.png' style='width: 32px;height: 32px;vertical-align:middle'/>
               <span><a href="{{blog.absolute_url}}"><font style="color:Gold">  博客主页</font></a></span>
@@ -88,14 +90,14 @@
       {% block search_page %}
           <br>
           <p class="search-result-meta">
-            Your search for <strong>“ {{ query_string }} ”</strong> matches <strong> {{ results_count }} </strong> results:
+            搜索 <strong>“ {{ query_string }} ”</strong> 匹配 <strong> {{ results_count }} </strong> 结果:
           </p>
       {% endblock %}
 
       {% block tags_page %}
           <br>
           <p class="search-result-meta">
-            Posts match <strong>“ {{ tag_name }} ”</strong> tag:
+            符合 <strong>“ {{ tag_name }} ”</strong> 标签的文档:
           </p>
       {% endblock %}
 
@@ -208,31 +210,13 @@
 
 
       {% block show_page %}
-<!--            
-      <div class="share">
-        <div class="addthis_toolbox addthis_default_style ">
-          {% block twitter_sharing %}
-          <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-          {% endblock %}
-
-          {% block twitter_sharing %}
-          <a class="addthis_button_tweet"></a>
-          {% endblock %}
-
-          {% block google_plus_sharing %}
-          <a class="addthis_button_google_plusone" g:plusone:size="{{ site.google_plus_one_size }}"></a>
-          {% endblock %}
-          <a class="addthis_counter addthis_pill_style"></a>
-        </div>
-        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid={{ site.addthis_profile_id }}"></script>
-      </div>
--->
-
-  <br><center><b>☯想说点啥吗？选择多说或者Disqus评论☯</b></center><br>
+            
+  <br><center><b><i class="icon-comment"/>想说点啥吗？选择多说或者Disqus评论<i class="icon-comment"/></b></center><br>
   <br><center><b>多说评论</b></center><br>
     
 <!-- 多说评论框 start -->
   <div class="ds-thread" data-thread-key={{post.published_at.(timestamp)}} data-title="{{post.title}}" data-url="{{post.absolute_url}}"></div>
+  
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -247,7 +231,7 @@ var duoshuoQuery = {short_name:"childhoodandy"};
   })();
   </script>
 <!-- 多说公共JS代码 end -->
-    
+    <br><br>
     <!-- 多说最新评论 start -->
   <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
 <!-- 多说最新评论 end -->
@@ -264,7 +248,7 @@ var duoshuoQuery = {short_name:"childhoodandy"};
   })();
   </script>
 <!-- 多说公共JS代码 end -->
-    
+    <br><br>
     <!-- 多说热评文章 start -->
   <div class="ds-top-threads" data-range="daily" data-num-items="5"></div>
 <!-- 多说热评文章 end -->
