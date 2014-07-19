@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>demo001</title>
+		<script type="text/javascript" src="d3.v3.min.js"></script>
+		<style type="text/css">
+			div.bar {
+				display: inline-block;;
+				width: 20px;
+				height: 75px;
+				margin-right: 2px;
+				background-color: teal;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var dataset = [ 5, 10, 15, 20, 25 ];
+			var myFunc = function(d){
+				return "this is number: " + d;
+			}
+			d3.select("body").selectAll("div")
+				.data(dataset)
+				.enter()
+				.append("div")
+				.attr("class", "bar")
+				.style("height", function(d) {
+					return d * 5 + "px";
+				})
+		</script>
+	</body>
+</html>
