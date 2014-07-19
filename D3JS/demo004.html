@@ -3,7 +3,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>demo003</title>
+		<title>demo004</title>
 		<script type="text/javascript" src="d3.v3.min.js"></script>
 		<style type="text/css">
 			div.bar {
@@ -17,7 +17,10 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-			var dataset = [ 5, 10, 15, 20, 25 ];
+			var dataset = []
+			for (var i = 0; i < 25; i++) {
+				dataset.push(Math.random() * 30)
+			}
 			var myFunc = function(d){
 				return "this is number: " + d;
 			}
