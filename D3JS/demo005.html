@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>demo005</title>
+		<script type="text/javascript" src="d3.v3.min.js"></script>
+		<style type="text/css">
+			svg .ellipse {
+				fill: yellow;
+				stroke: orange;
+				stroke-width: 5;
+			}
+		</style>
+	</head>
+	<body>
+		<svg width="500" height="100">
+			<!-- <rect x="0" y="0" width="500" height="50"/> -->
+			<!-- <circle cx="250" cy="25" r="25"/> -->
+			<ellipse cx="250" cy="25" rx="100" ry="25" class="ellipse"/>
+			<line x1="0" y1="0" x2="500" y2="50" stroke="red" stroke-width="5" opacity="0.5"/>
+			<text x="0" y="25" font-family="sans-serif" font-size="25" fill="gray">this is text in svg</text>
+		</svg>
+	</body>
+</html>
