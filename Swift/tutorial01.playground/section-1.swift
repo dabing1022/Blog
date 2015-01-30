@@ -4,6 +4,7 @@ import Cocoa
 
 var str = "Hello, playground"
 
+
 println("Hello World!")
 
 var a = 42
@@ -110,15 +111,15 @@ enum Rank: Int {
         case .King:
             return "king"
         default:
-            return String(self.toRaw())
+            return String(self.rawValue)
         }
     }
 }
 let ace = Rank.Ace
-let aceRawValue = ace.toRaw()
+let aceRawValue = ace.rawValue
 
 
-if let convertedRank = Rank.fromRaw(3) {
+if let convertedRank = Rank(rawValue: 3) {
     let threeDescription = convertedRank.simpleDescription()
 }
 

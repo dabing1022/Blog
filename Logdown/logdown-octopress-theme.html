@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="{{blog.author_display_name}}">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="http://childhoodgamedev.qiniudn.com/logdown_avatar-icon2.ico" />
+    
+  <script src="http://cdn-theme.logdown.io/octopress/javascripts/modernizr-2.0.js"></script>
+  <script src="http://libs.baidu.com/jquery/1.8.2/jquery.min.js"></script>
+  <script src="http://cdn-theme.logdown.io/octopress/javascripts/octopress.js" type="text/javascript"></script>
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=35837823" charset="UTF-8"></script>
+
+  <link href="http://cdn-theme.logdown.io/octopress/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+  <link href="http://cdn-theme.logdown.io/utils/stylesheets/default_code_highlight.css" media="screen, projection" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <header role="banner">
+    <hgroup>
+      <h1><a href="{{blog.absolute_url}}"> {{ blog.title }} </a></h1>
+      <h2> {{ blog.tagline }} </h2>
+    </hgroup>
+  </header>
+  <nav role="navigation">
+    <ul class="subscription" data-subscription="rss">
+      <li>
+        <a href="{{ blog.rss_url }}" rel="subscribe-rss" title="subscribe via RSS">RSS</a>
+      </li>
+    </ul>
+
+    <form action="{{ blog.search_posts_url }}" method="get">
+      <fieldset role="search">
+        <input class="search" type="text" name="q" results="0" placeholder="Search">
+      </fieldset>
+    </form>
+
+
+    <ul class="main-navigation">
+      <li><a href="{{blog.absolute_url}}">博客</a></li>
+      <li><a href="{{ blog.archives_url }}">归档</a></li>
+
+      {% block static_page_list %}
+        {% block static_pages %}
+          <li><a href="{{ static_page.absolute_url }}">{{static_page.title}}</a></li>
+        {% endblock %}
+      {% endblock %}
+
+    </ul>
+  </nav>
+
+
+  <div id="main">
+    <div id="content">
+
+
+      <div {% block tags_page|index_page|search_page %} class="blog-index" {% endblock %} >
+
+
+      {% block search_page %}
+        <article>
+          Your search for <strong>“ {{ query_string }} ”</strong> matches <strong> {{ results_count }} </strong> results:
+        </article>
+      {% endblock %}
+
+      {% block tags_page %}
+        <article>
+          Posts match <strong>“ {{ tag_name }} ”</strong> tag:
+        </article>
+      {% endblock %}
+
+      {% block category_page %}
+        <article role="article">
+          <header>
+            <h2 class="entry-title">分类: {{ category.name }}</h2>
+          </header>
+
+          <div id="blog-archives">
+            {% block archives %}
+              <h3>{{archive.year}}</h3>
+              {% block posts %}
+                <article>
+                  <h4><a href="{{post.absolute_url}}">{{post.title}}</a></h4>
+                  <time datetime="{{post.published_at.utc}}" pubdate=""><span class="month">{{ post.published_at.short_month }}</span> <span class="day">{{ post.published_at.day_of_month }}</span> <span class="year">{{ archive.year }}</span></time>
+
+                  <footer>
+                    {% block tag_list %}
+                    <span class="categories">
+                      posted in
+                      {% block tags %}
+                        <a class="category" href="{{tag.url}}">{{tag.name}}</a>
+                      {% endblock %}
+                    </span>
+                    {% endblock %}
+                  </footer>
+                </article>
+              {% endblock %}
+            {% endblock %}
+          </div>
+        </article>
+      {% endblock %}
+
+
+
+      {% block archives_page %}
+        <article role="article">
+          <header>
+            <h2 class="entry-title">Blog Archive</h2>
+          </header>
+
+          <div id="blog-archives">
+            {% block archives %}
+              <h3>{{archive.year}}</h3>
+
+              {% block posts %}
+                <article>
+                  <h4><a href="{{post.absolute_url}}">{{post.title}}</a></h4>
+                  <time datetime="{{post.published_at.utc}}" pubdate=""><span class="month">{{ post.published_at.short_month }}</span> <span class="day">{{ post.published_at.day_of_month }}</span> <span class="year">{{ archive.year }}</span></time>
+
+                  <footer>
+                    {% block tag_list %}
+                    <span class="categories">
+                      posted in
+                      {% block tags %}
+                        <a class="category" href="{{tag.url}}">{{tag.name}}</a>
+                      {% endblock %}
+                    </span>
+                    {% endblock %}
+                  </footer>
+                </article>
+              {% endblock %}
+
+            {% endblock %}
+          </div>
+        </article>
+      {% endblock %}
+
+
+
+      {% block static_page %}
+        <article>
+          <header>
+            <h2 class="entry-title">{{static_page.title}}</h2>
+          </header>
+          <div class="entry-content">
+            {{static_page.content}}
+
+          </div>
+
+          <footer></footer>
+        </article>
+      {% endblock %}
+
+
+
+
+      {% block posts %}
+        <article>
+          <header>
+            <h2 class="entry-title">
+                {% block show_page %}
+                  {{post.title}}
+                {% endblock %}
+
+                {% block tags_page|index_page %}
+                  <a href="{{post.absolute_url}}">{{post.title}}</a>
+                {% endblock %}
+
+                {% block search_page %}
+                  <a href="{{post.absolute_url}}">{{ post.title | highlight: query_string }}</a>
+                {% endblock %}
+            </h2>
+            <p class="meta">
+              <time datetime="{{post.published_at.utc}}" pubdate data-updated="true">{{post.published_at.date}}</time>
+              {% block disqus %} | <a href="{{ post.disqus_comments_link }}"> Comments </a> {% endblock %}
+            </p>
+          </header>
+
+          <div class="entry-content">
+              {% block search_page %}
+                {{ post.content | search_content: query_string }}
+              {% endblock %}
+
+              {% block index_page|tags_page %}
+                {{ post.excerpt_content }}
+              {% endblock %}
+
+
+              {% block show_page %}
+                {{ post.content }}
+              {% endblock %}
+
+          </div>
+
+          <footer>
+            {% block index_page|tags_page %}
+              {% block readmore %}
+                <a rel="full-article" href="{{post.absolute_url}}">Read on &rarr;</a>
+              {% endblock %}
+            {% endblock %}
+
+
+            {% block show_page %}
+              <p class="meta">
+                <span class="byline author vcard">Posted by <span class="fn">{{ post.author_name }}</span></span>
+                <time datetime="{{post.published_at.utc}}" pubdate data-updated="true">{{post.published_at.date}}</time>
+
+                {% block tag_list %}
+                <span class="categories">
+                  {% block tags %}
+                    <a class="category" href="{{tag.url}}">{{tag.name}}</a>
+                  {% endblock %}
+                </span>
+                {% endblock %}
+              </p>
+            {% endblock %}
+
+          </footer>
+        </article>
+
+        {% block show_page %}
+          {% block disqus %}
+          <section>
+            <h1>Comments</h1>
+            {% disqus %}
+          </section>
+          {% endblock %}
+        {% endblock %}
+
+
+        {% block show_page %}
+          <div class="pagination">
+            {% block previous_post %}
+              <a class="prev" href="{{previous_post_url}}">
+                &larr; {{previous_post_title}}
+              </a>
+            {% endblock %}
+
+            {% block next_post %}
+              <a class="next" href="{{next_post_url}}">
+                {{next_post_title}} &rarr;
+              </a>
+            {% endblock %}
+          </div>
+        {% endblock %}
+
+      {% endblock %}
+
+
+
+
+
+        {% block pagination %}
+        <div class="pagination">
+            {% block previous_page %}
+              <a class="next" href="{{previous_page_url}}">Newer &rarr;</a>
+            {% endblock %}
+
+            <a href="{{ blog.archives_url }}">Blog Archives</a>
+
+            {% block next_page %}
+              <a class="prev" href="{{next_page_url}}">&larr; Older</a>
+            {% endblock %}
+
+        </div>
+        {% endblock %}
+
+      </div>
+      <aside class="sidebar">
+        {% block recent_posts %}
+          <section class="first odd">
+            <h2>最近文章</h2>
+            <ul id="recent_posts">
+              {% block posts %}
+              <li class="post">
+                <a href="{{ post.absolute_url }}">{{post.title}}</a>
+              </li>
+              {% endblock %}
+            </ul>
+          </section>
+        {% endblock %}
+
+        {% block category_list %}
+          <section class="first odd">
+            <h2>分类</h2>
+            <ul id="recent_posts">
+              {% block categories %}
+              <li class="post">
+                <a href="{{ category.url }}">{{category.name}}  ({{category.count}})</a>
+              </li>
+              {% endblock %}
+            </ul>
+          </section>
+        {% endblock %}
+
+
+
+      </aside>
+
+
+    </div>
+  </div>
+
+
+  <footer role="contentinfo">
+    <p>
+      Copyright © 2013 - {{ blog.user_name }} -
+      <span class="credit">
+        Powered by <a href="http://logdown.com">Logdown</a> and <a href="http://octopress.org">Octopress</a>
+      </span>
+    </p>
+  </footer>
+
+
+</body>
+</html>
