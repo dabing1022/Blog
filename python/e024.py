@@ -38,6 +38,7 @@ match11 = a.match('3.1415')
 match12 = a.match('33')
 match21 = b.match('3.1415')
 match22 = b.match('33')
+match33 = b.match('33.')
 
 if match11:
     print match11.group()
@@ -58,3 +59,8 @@ if match22:
     print match22.group()
 else:
     print 'match22 not decimal'
+
+if match33:
+    print match33.group()
+else:
+    print 'match33 not decimal'

@@ -8,7 +8,7 @@ print 'b type is ', type(b), ' value is ', b
 
 c = 100.0234324
 print 'c int is %d' % c
-print 'c .2f is %.2f' % c
+print 'c .2f is %e.2f' % c
 print 'c is %+f' % c
 c = -1 * c
 print 'c is %+f' % c

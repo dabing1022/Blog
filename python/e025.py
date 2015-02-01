@@ -23,6 +23,7 @@ print re.match(s, testStr2).group()
 
 s = r'^<(\w)+(\s)*(\w)+>'
 name = re.match(s, testStr3).group()
+print name
 print name[1:-1]
 
 print '--------------------------------------------------'
