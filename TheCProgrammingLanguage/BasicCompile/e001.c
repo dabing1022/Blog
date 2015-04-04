@@ -1,4 +1,7 @@
 // const pointer
+#include <iostream>
+using namespace std;
+
 int main()
 {
     int count = 1;
@@ -15,5 +18,18 @@ int main()
     item2 = 26;
     // but this is wrong
     //*pitem = 26;
+
+    cout << "sizeof(double) = " << sizeof(double) << endl;
+    cout << "sizeof(char) = " << sizeof(char) << endl;
+
+    int x;
+    int i = sizeof x;
+    cout << "sizeof x = " << i << endl;
+
+    int y[10];
+    int *p = y;
+    cout << sizeof(y) / sizeof(*y) << endl;
+    cout << sizeof(p) / sizeof(*p) << endl;
+
     return 0;
 }
