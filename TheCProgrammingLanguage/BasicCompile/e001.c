@@ -31,5 +31,14 @@ int main()
     cout << sizeof(y) / sizeof(*y) << endl;
     cout << sizeof(p) / sizeof(*p) << endl;
 
+    // struct
+    struct  {
+        char c;
+        int i;
+    }structInstance;
+
+    cout << "sizeof structInstance: " << sizeof structInstance << endl;
+
+
     return 0;
 }

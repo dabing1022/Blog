@@ -37,7 +37,7 @@ int main() {
 	for (int i = 0; i < L0->length; i++) {
 		cout << L0->r[i] << " ";
 	}
-	
+
 	return 0;
 }
 
