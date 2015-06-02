@@ -28,7 +28,7 @@ enum Day2: Int {
 }
 
 let day = Day2.Thursday
-let dayNumber = Day2.Thursday.toRaw()
+let dayNumber = Day2.Thursday.rawValue
 
 // ---------------------------------
 enum IllegalCharactor: Character {
@@ -103,16 +103,6 @@ class Train {
             }
         }
         
-    }
-}
-
-// ---------------Extensions
-// class struct (almost everything)
-extension Size {
-    // Don't forget the word "mutating"!
-    mutating func increaseByFactor(factor:Int) {
-//        width *= factor
-//        height *= factor
     }
 }
 

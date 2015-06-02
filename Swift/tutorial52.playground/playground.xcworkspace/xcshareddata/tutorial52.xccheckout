@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A449809F-5FCD-4FEB-9305-037FC33A100F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>tutorial52</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E02A190533F34F15B81D909F467775A1B1E073BA</key>
+		<string>https://github.com/dabing1022/Blog.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Swift/tutorial52.playground</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E02A190533F34F15B81D909F467775A1B1E073BA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dabing1022/Blog.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E02A190533F34F15B81D909F467775A1B1E073BA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E02A190533F34F15B81D909F467775A1B1E073BA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Blog</string>
+		</dict>
+	</array>
+</dict>
+</plist>
