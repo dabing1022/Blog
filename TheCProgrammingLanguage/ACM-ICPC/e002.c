@@ -30,7 +30,7 @@ int main()
     scanf("%d", &base);
 
     convert(s, old, base);
-    printf("10进制数%d的%d进制转换结果为%s\n", old, base,s);
+    printf("10进制数%d的%d进制转换结果为%s\n", old, base, s);
 
     getchar();
 
