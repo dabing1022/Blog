@@ -36,7 +36,7 @@ opener.open(req)
 def downloadTeacherDoc(viewURL, index):
 	global savingDir, opener, studentDocDownloadPath, teacherDocDownloadPath
 
-	req = urllib2.Request(url=viewURL, headers=headers)
+	req = urllib2.Request(url='http://jiaoshi.zhikang.org/sixtteacher/lecture/lecture!detail.action?lecturetype=standard&lectureReq.lectureId=ff8080814a5b3118014a6022477b0005', headers=headers)
 	response = opener.open(req)
 	html_content = response.read()
 	soup = BeautifulSoup(html_content)
