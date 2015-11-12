@@ -5,10 +5,10 @@ let cardNum: Int = 4
 func dfs(step: Int) -> Void {
     if (step == cardNum + 1) {
         for i in 1...cardNum {
-            println(a[i])
+            print(a[i])
         }
         
-        println("-------------")
+        print("-------------")
         return
     }
     

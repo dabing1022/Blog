@@ -71,7 +71,7 @@ func dfs(x: Int, y: Int, step: Int32) -> Void {
             book[tx][ty] = 1
             tileViewArr[COL_NUM*tx+ty].backgroundColor = walkingColor
             mapView
-            dfs(tx, ty, step+1)
+            dfs(tx, y: ty, step: step+1)
             book[tx][ty] = 0
             tileViewArr[COL_NUM*tx+ty].backgroundColor = canWalkColor
         }
@@ -79,5 +79,5 @@ func dfs(x: Int, y: Int, step: Int32) -> Void {
 }
 
 book[entryPos[0]][entryPos[1]] = 1
-dfs(entryPos[0], entryPos[1], 0)
+dfs(entryPos[0], y: entryPos[1], step: 0)
 min

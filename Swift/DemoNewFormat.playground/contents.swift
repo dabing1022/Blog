@@ -23,15 +23,15 @@ var vacationImage = NSImage(named: "Tortolla.jpg")
 //: Next, we'll create a filter to apply to the image. For a full listing of filters [go here](https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#).
 
 let monochromeFilter = CIFilter(name:"CIColorMonochrome")
-let inputCIImage = CIImage(data:vacationImage?.TIFFRepresentation);
+let inputCIImage = CIImage(data:(vacationImage?.TIFFRepresentation)!);
 
 // Set some filter parameters.
-monochromeFilter.setValue(inputCIImage, forKey:kCIInputImageKey)
-monochromeFilter.setValue(CIColor(red: 0.5, green: 0.5, blue: 0.5), forKey:kCIInputColorKey)
-monochromeFilter.setValue(1.0, forKey:kCIInputIntensityKey)
+monochromeFilter!.setValue(inputCIImage, forKey:kCIInputImageKey)
+monochromeFilter!.setValue(CIColor(red: 0.5, green: 0.5, blue: 0.5), forKey:kCIInputColorKey)
+monochromeFilter!.setValue(1.0, forKey:kCIInputIntensityKey)
 
 // Use the playground to peek at the image now
-let outputCIImage = monochromeFilter.outputImage
+let outputCIImage = monochromeFilter!.outputImage
 
 //: ## Explore the Filter Settings
 //: 
@@ -42,10 +42,10 @@ for i in 1...numImagesToGenerate {
     
     let colorChannelValue: CGFloat = (CGFloat(i)/CGFloat(numImagesToGenerate))
     let ciColor = CIColor(red: colorChannelValue, green: colorChannelValue, blue: colorChannelValue)
-    monochromeFilter.setValue(ciColor, forKey:kCIInputColorKey)
+    monochromeFilter!.setValue(ciColor, forKey:kCIInputColorKey)
 
     // now, look at the image!
-    let outputCIImage = monochromeFilter.outputImage
+    let outputCIImage = monochromeFilter!.outputImage
 }
 
 
