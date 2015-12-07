@@ -1,4 +1,5 @@
-et linebreak
+" 行控制
+set linebreak
 set wrap
 " 行号和标尺
 set number
