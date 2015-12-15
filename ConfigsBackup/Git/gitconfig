@@ -13,7 +13,7 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [alias]
-    ci = commit -a -v
+    ci = commit -am
     throw = reset --hard HEAD
     throwh = reset --hard HEAD^
     log1 = log --abbrev-commit --pretty=oneline
