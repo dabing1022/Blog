@@ -16,7 +16,7 @@ class Counter {
         count += amount * numberOfTimes
     }
     
-    func incrementBy3(#amount: Int, numberOfTimes: Int) {
+    func incrementBy3(amount amount: Int, numberOfTimes: Int) {
         count += amount * numberOfTimes
     }
     
@@ -50,8 +50,8 @@ struct Point {
 }
 let somePoint = Point(x: 4.0, y: 5.0)
 if somePoint.isToTheRightOfX(1.0) {
-    println("This point is to the right of the line where x == 1.0")
+    print("This point is to the right of the line where x == 1.0")
 }
 var somePoint2 = Point(x: 1.0, y: 1.0)
 somePoint2.moveByX(2.0, y: 3.0)
-println("The point is now at (\(somePoint2.x), \(somePoint2.y))")
+print("The point is now at (\(somePoint2.x), \(somePoint2.y))")

@@ -25,8 +25,8 @@ let sineWave2 = (0..<sineArraySize).map {
     amplitude2 * sin(2.0 * M_PI / Double(sineArraySize) * Double($0) * frequency2 + phase2)
 }
 
-plotArrayInPlayground(sineWave, "Sine wave 1")
-plotArrayInPlayground(sineWave2, "Sine wave 2")
+plotArrayInPlayground(sineWave, title: "Sine wave 1")
+plotArrayInPlayground(sineWave2, title: "Sine wave 2")
 
 // Simple loop-based array addition
 var combinedSineWave = [Double](count:sineArraySize, repeatedValue:0.0)
