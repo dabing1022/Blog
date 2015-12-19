@@ -5,7 +5,7 @@
 	excludesfile = /Users/Childhood/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -13,6 +13,8 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [alias]
+	pullom = pull origin master
+	pushom = push origin master
     ci = commit -am
     throw = reset --hard HEAD
     throwh = reset --hard HEAD^
