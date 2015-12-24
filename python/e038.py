@@ -11,16 +11,16 @@ import os.path
 import urllib
 import urllib2
 import re
-from githubpy import GitHub
 
-username = 'GitHub user name'
-password = 'GitHub password'
+username = 'username'
+password = 'password'
 
 session = requests.Session()
 headers = {
 	'User-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.93 Safari/537.36'
 }
-page_login = BeautifulSoup(session.get('https://github.com/login').text)
+rsp = session.get('https://github.com/login')
+page_login = BeautifulSoup(rsp.text, 'html.parser')
 post_form = page_login.find('div', id='login')
 payload = {
     ip['name']: ip['value']
@@ -32,11 +32,11 @@ payload['login'] = username
 payload['password'] = password
 
 rsp = session.post('https://github.com/session', data=payload, headers=headers)
+print('login:' + str(rsp.status_code))
 if session.cookies['logged_in'] != 'yes':
     print 'login failed.'
 else:
     print 'login success.'
 
-print(rsp.text)
-payload = {'target' : 'moollaza'}
-session.post('https://github.com/users/follow', data=payload)
+rsp = session.post('https://github.com/users/follow?target=test')
+print('follow:' + str(rsp.status_code))
