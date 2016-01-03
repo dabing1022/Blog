@@ -22,7 +22,7 @@
             Please enter your OpenID, or select one of the providers below:<br>
             {{ form.openid(size=80) }}
             {% for error in form.openid.errors %}
-                <span style="color: red;">[{{ error }}]</span>
+                <span style="color: red;">~~~{{ error }}~~~</span>
             {% endfor %}<br>
             |{% for pr in providers %}
                 <a href="javascript:set_openid('{{ pr.url }}', '{{ pr.name }}');">{{ pr.name }}</a> |
