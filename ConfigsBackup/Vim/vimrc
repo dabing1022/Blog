@@ -6,6 +6,8 @@ set number
 set ruler
 " 设置竖线
 set cuc
+" 设置横线
+set cul
 
 " =============
 " Color Scheme
