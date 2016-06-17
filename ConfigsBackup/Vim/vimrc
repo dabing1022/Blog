@@ -1,4 +1,3 @@
-" 行控制
 set linebreak
 set wrap
 " 行号和标尺
@@ -6,24 +5,7 @@ set number
 set ruler
 " 设置竖线
 set cuc
-" 设置横线
 set cul
-
-" =============
-" Color Scheme
-" =============
-if has('syntax')
-    colorscheme murphy
-
-    " 默认编辑器配色
-    au BufNewFile,BufRead,BufEnter,WinEnter * colo murphy
-
-    " 各不同类型的文件配色不同
-    au BufNewFile,BufRead,BufEnter,WinEnter *.wiki colo void
-
-    " 保证语法高亮
-    syntax on
-endif
 
 " 在查找时忽略大小写
 set ignorecase
@@ -37,10 +19,41 @@ set smarttab
 set shiftwidth=4
 set softtabstop=4
 
-call pathogen#infect()
-
-"set guifont=PowerlineSymbols\ for\ Powerline
-set nocompatible
 set laststatus=2
 set t_Co=256
-"let g:Powerline_symbols='fancy'
+
+" vundle----------------------------------------
+set nocompatible                " be iMproved
+filetype off                    " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'kien/ctrlp.vim'
+Bundle 'sukima/xmledit'
+Bundle 'sjl/gundo.vim'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'klen/python-mode'
+Bundle 'Valloric/ListToggle'
+Bundle 'scrooloose/syntastic'
+Bundle 't9md/vim-quickhl'
+Bundle 'scrooloose/nerdcommenter'
+"..................................
+" vim-scripts repos
+Bundle 'YankRing.vim'
+Bundle 'vcscommand.vim'
+Bundle 'EasyGrep'
+
+filetype plugin indent on
+" ---------------------------------------------
+
+" ColorTheme
+syntax enable
+Bundle 'tomasr/molokai'
+let g:molokai_original = 1
+set background=dark
+set t_Co=256
+colorscheme molokai
