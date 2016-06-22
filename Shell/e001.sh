@@ -8,3 +8,9 @@ read name
 echo "Your name is ${name}"
 
 echo $SHELL
+
+if [ $UID -ne 0 ]; then
+  echo Non root user.
+else
+  echo root user.
+fi
