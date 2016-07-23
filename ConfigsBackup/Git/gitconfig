@@ -18,6 +18,7 @@
     ci = commit -am
     throw = reset --hard HEAD
     throwh = reset --hard HEAD^
+    edit = reset --soft HEAD^
     log1 = log --abbrev-commit --pretty=oneline
  	log2 = log --pretty=oneline
  	log3 = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
