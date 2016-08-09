@@ -18,6 +18,7 @@
     ci = commit -am
     throw = reset --hard HEAD
     throwh = reset --hard HEAD^
+    discard = checkout HEAD 
     edit = reset --soft HEAD^
     log1 = log --abbrev-commit --pretty=oneline
  	log2 = log --pretty=oneline
