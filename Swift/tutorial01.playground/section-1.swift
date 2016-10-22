@@ -4,8 +4,9 @@ import Cocoa
 
 var str = "Hello, playground"
 
+print
+print(str, separator: "~~", terminator: "!")
 
-println("Hello World!")
 
 var a = 42
 a = 50

@@ -2,7 +2,6 @@ set linebreak
 set wrap
 " 行号和标尺
 set number
-set relativenumber
 set ruler
 " 设置竖线
 set cuc
@@ -29,6 +28,12 @@ filetype off                    " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"--------------------------------------------------------
+" How to install plugin ?
+" BundleInstall
+" BundleInstall!
+" BundleInstall plugin_name
+"
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
@@ -42,10 +47,23 @@ Bundle 'Valloric/ListToggle'
 Bundle 'scrooloose/syntastic'
 Bundle 't9md/vim-quickhl'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'bling/vim-airline'
+
+" tagbar
+Bundle 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
+" nerdtree
+Bundle 'scrooloose/nerdtree'
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=30
+map <F2> :NERDTreeToggle<CR>
+
 "..................................
 " vim-scripts repos
 Bundle 'YankRing.vim'
 Bundle 'vcscommand.vim'
+Bundle 'taglist.vim'
 Bundle 'EasyGrep'
 
 filetype plugin indent on
