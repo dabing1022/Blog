@@ -26,6 +26,7 @@
  	br = branch
  	ck = checkout
  	st = status
+    last = cat-file commit HEAD
 [credential]
     helper = store
 [push]
