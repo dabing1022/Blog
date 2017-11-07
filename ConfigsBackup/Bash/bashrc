@@ -1,0 +1,2 @@
+alias l='ls -lah'
+alias ssh_ChildhoodAndy='ssh root@172.96.210.71 -p27686'

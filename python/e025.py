@@ -36,3 +36,10 @@ s = match.start()
 e = match.end()
 
 print 'Found "%s"\nin "%s" from %d to %d "%s"' % (match.re.pattern, match.string, s, e, text[s:e])
+
+
+test = '"subcmd":"subcmd_name1", "key1":"value1"'
+test2 = '"subcmd":"-1", "key1":"value1"'
+
+print re.match(r'("subcmd":"\w*")', test).group()
+print re.match(r'("subcmd":"-?\d*")', test2).group()
