@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./identicon.js"></script>
+    <script src="./pnglib.js"></script>
+    <title>Identicon</title>
+</head>
+<body>
+    <script>
+        var hash = "c157a79031e1c40f85931829bc5fc552";  // 15+ hex chars
+        var options = {
+            foreground: [0, 0, 0, 255],               // rgba black
+            background: [255, 255, 255, 255],         // rgba white
+            margin: 0.2,                              // 20% margin
+            size: 420,                                // 420px square
+            format: 'svg'                             // use SVG instead of PNG
+            };
+
+        // create a base64 encoded SVG
+        var data = new Identicon(hash, options).toString();
+
+        // write to a data URI
+        var imgDom = '<img width=420 height=420 src="data:image/svg+xml;base64,' + data + '">';
+        console.log(imgDom)
+        document.write(imgDom);
+    </script>
+</body>
+</html>
